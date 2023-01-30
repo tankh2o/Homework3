@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Значение переменной catB с типом short равно " + catB);
         int catG = 5;
         System.out.println("Значение переменной catG с типом int равно " + catG);
-        long catY = 10L;
+        long catY = 100000000000L;
         System.out.println("Значение переменной catY с типом long равно " + catY);
         float catL = 2.5f;
         System.out.println("Значение переменной catL с типом float равно " + catL);
@@ -15,10 +15,10 @@ public class Main {
 
         float a = 27.12f;
         long b = 987678965549L;
-        float c = 2.786f;
+        double c = 2.786;
         short d = 569;
         short e = -159;
-        short f = 27897;
+        int f = 27897;
         byte g = 67;
         System.out.println("Получились следующие данные: " + a + ", " + b + ", " + c + ", " + d + ", " + e + ", " + f + ", " + g + ".");
 
@@ -39,15 +39,17 @@ public class Main {
         int bottle_24Hours = bottle_1Hour * 24;
         System.out.println("За 24 часа машина произвела " + bottle_24Hours + " бутылок.");
         int bottle_3Days = bottle_24Hours * 3;
-        System.out.println("За 3 дня машина произвела " + bottle_3Days + "бутылок.");
+        System.out.println("За 3 дня машина произвела " + bottle_3Days + " бутылок.");
         int bottle_31Days = bottle_24Hours * 31;
         System.out.println("За 31 день машина произвела " + bottle_31Days + " бутылок.");
 
         byte jar = 120;
         byte jar_classroom1 = 6;
+        byte jarWhite_classroom1 = 2;
+        byte jarBrown_classroom1 = 4;
         int inTotal_classroom = jar / jar_classroom1;
-        int inTotal_jarWhite = inTotal_classroom * 2;
-        int inTotal_jarBrown = inTotal_classroom * 4;
+        int inTotal_jarWhite = inTotal_classroom * jarWhite_classroom1;
+        int inTotal_jarBrown = inTotal_classroom * jarBrown_classroom1;
         System.out.println("В школе, где " + inTotal_classroom + " классов, нужно " + inTotal_jarWhite + " банок белой краски и " + inTotal_jarBrown + " банок коричневой краски.");
 
         byte banana1 = 80;
@@ -58,11 +60,14 @@ public class Main {
         float coctail_kg = cocktail_gr / 1000f;
         System.out.println("1 коктейль будет весить " + cocktail_gr + " грамм. Если перевести в килограммы, то будет весить " + coctail_kg + " килограмм.");
 
-        byte excessWeight_kg = 7;
-        int days_gr250 = excessWeight_kg * 1000 / 250;
-        int days_gr500 = excessWeight_kg * 1000 / 500;
-        int averageNumberDays = (days_gr250 +days_gr500) / 2;
-        System.out.println("Если спорсмен будет сбрасывать 250 гр в день, то за " + days_gr250 + " дней спортсмен сможет войти в свою весовую категорию. Если по 500 грамм, то за " + days_gr500 + " дней. В среднем у спортсмена может уйти " + averageNumberDays + " день.") ;
+        int excessWeight_kg = 7000;
+        int minWightLoss = 250;
+        int maxWightLoss = 500;
+        double maxDays = (double) excessWeight_kg / minWightLoss;
+        double minDays = (double) excessWeight_kg / maxWightLoss;
+        double lossWeightPerDayAverage = (double) (minWightLoss + maxWightLoss) / 2;
+        double averageNumberDays = (double) excessWeight_kg / lossWeightPerDayAverage;
+        System.out.println("Если спорсмен будет сбрасывать 250 гр в день, то за " + maxDays + " дней спортсмен сможет войти в свою весовую категорию. Если по 500 грамм, то за " + minDays + " дней. В среднем у спортсмена может уйти " + averageNumberDays + " дней.");
 
         int salary_M = 67760;
         int salary_D = 83690;
